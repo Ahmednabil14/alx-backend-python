@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-from typing import List
+from typing import List, Union
 """task 6"""
 
 
-def sum_mixed_list(mxd_lst: List[int | float]) -> float:
+def sum_mixed_list(mxd_lst: List[Union[float, int]]) -> float:
     """sum mixed list"""
     sum: float = 0
     for li in mxd_lst:
