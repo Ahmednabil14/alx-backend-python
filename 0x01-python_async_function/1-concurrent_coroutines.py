@@ -13,4 +13,14 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     for i in range(n):
         delay = await wait_random(max_delay)
         ls.append(delay)
-    return ls
+    sorted_list = [ls[0]]
+    flag = False
+    for item in ls:
+        for i in sorted_list:
+            if item < i:
+                sorted_list.insert(sorted_list.index(i), item)
+                flag = True
+                break
+        if not flag:
+            sorted_list.append(item)
+    return sorted_list
